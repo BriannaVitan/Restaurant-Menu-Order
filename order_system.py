@@ -139,12 +139,12 @@ def update_order(order, menu_selection, menu_items):
         # TODO: When the user's input isn't valid, 
         # TODO: tell the customer that their input isn't valid
         else:
-            print("Sorry, that number isn't an option.")
+            print("Sorry, that number was not a menu option.")
     # TODO: When the menu selection wasn't valid:
     # TODO: Print the menu selection and 
     # TODO: Tell the customer they didn't select a menu option
     else:
-        print("Please enter a number corresponding to the menu options.")
+        print(f"{menu_selection} was not a menu option.")
 
     # TODO: Return the updated order
     return(order)
@@ -160,16 +160,22 @@ def print_itemized_receipt(receipt):
     # Uncomment the following line if you need to check the structure of the receipt
     #print(receipt)
 
-    # TODO: Loop through the items in the customer's receipt
+    # TODO: Loop through the items in the customer's receip
+    # TODO Store the dictionary items as variables
     for items in receipt:
-        # TODO Store the dictionary items as variables
         item_name = items['Item name']
         price=items['Price']
         quantity=items['Quantity']
 
         # TODO: Print the receipt line using the print_receipt_line function
-        # TODO: Send the item name, price, and quantity as separate arguments
         print_receipt_line(item_name, price, quantity)
+        
+        # TODO: Send the item name, price, and quantity as separate arguments
+    receipt = [
+    {'Item name': 'Burger', 'Price': 5.99, 'Quantity': 2},
+    {'Item name': 'Fries', 'Price': 2.49, 'Quantity': 3},
+    {'Item name': 'Soda', 'Price': 1.99, 'Quantity': 1}
+]
 
 ##################################################
 #  STARTER CODE
@@ -357,4 +363,5 @@ if __name__ == "__main__":
 
     # Print the receipt footer with the total price
     print_receipt_footer(total_price)
+
 
